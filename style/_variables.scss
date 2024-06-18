@@ -1,0 +1,105 @@
+// Importing Fonts
+@font-face { // Montserrat Font
+    font-family: Montserrat;
+    src: url("../fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
+}
+
+@font-face { // Open Sans Font
+    font-family: "Open Sans";
+    src: url("../fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf");
+}
+
+// Variables
+$white: #EFEFEF;
+$main-color: #191919;
+$second-color: #00572d;
+$third-color: #a2a2a2;
+
+$transition-duration: 0.4s;
+$section-ver-padding: 60px;
+
+// Container
+%grid-content {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 128px [content-start] 1fr [content-end] 128px;
+
+    @media(max-width: 996px) {
+        grid-template-columns: 64px [content-start] 1fr [content-end] 64px;;
+    }
+
+    @media(max-width: 768px) {
+        grid-template-columns: 32px [content-start] 1fr [content-end] 32px;;
+    }
+}
+
+%button-main-style {
+    color: $third-color;
+    display: inline-block;
+    font-size: 14px;
+    text-transform: uppercase;
+    background-color: $second-color;
+    padding: 8px 16px;
+}
+
+%button-second-style {
+    color: $third-color;
+    display: inline-block;
+    font-size: 0.88em;
+    text-transform: uppercase;
+    border: 2px solid $second-color;
+    padding: 8px 16px;
+    transition: $transition-duration ease-in-out background-color;
+    
+    &:hover {
+        background-color: $second-color;
+    } 
+}
+
+%title-1 {
+    width: 100%;
+    color: $third-color;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    opacity: 0.8;
+
+    @media (max-width: 640px) {
+        text-align: center;
+    }
+}
+
+%title-2 {
+    margin: auto;
+    max-width: 600px;
+    text-align: center;
+
+    h2 {
+        font-size: 1.6em;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: 1em;
+        margin-top: 8px;
+
+        @media (max-width: 768px) {
+            font-size: 14px;
+        }
+
+        @media (max-width: 640px) {
+            font-size: 12px;
+        }
+    }
+}
+
+%section-end-line {
+    content: "";
+    width: 50%;
+    height: 1px;
+    background-color: $third-color;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: $transition-duration ease-in-out width;
+}

@@ -1,0 +1,331 @@
+@import "variables.scss";
+
+// Global Rules 
+h1, h2, h3 {
+    font-family: Montserrat, sans-serif;
+    color: $white;
+}
+
+p {
+    font-family: "Open Sans", sans-serif;
+    color: $third-color;
+}
+
+
+// Start Header
+
+header {
+    @extend %grid-content;
+    width: 100%;
+    background-color: $main-color;
+    color: $white;
+    
+    > .header__container {
+        grid-column: content;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        > .header__logo {
+            padding: 16px 0px;
+            font-family: Montserrat, sans-serif;
+        }
+
+        nav {
+            padding: 16px 0px;
+            font-family: "Open Sans", sans-serif;
+            font-size: 12px;
+            text-transform: uppercase;
+
+            ul {
+
+                @media (max-width: 640px) {
+                    display: none;
+                }
+
+                li {
+                    display: inline-block;
+                    transition: $transition-duration ease-in-out opacity;
+    
+                    &:not(:last-child) {
+                        margin-right: 24px;
+                    }
+
+                    &:not(:hover) {
+                        opacity: 0.8;
+                    }
+                }
+            }
+
+            .header__burger-menu {
+                font-size: 16px;
+                cursor: pointer;
+
+                @media(min-width: 640px) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// End Header 
+
+// Start Hero Section 
+
+section.hero-section {
+    @extend %grid-content;
+    width: 100%;
+    height: calc(100vh - 56px);
+    background-color: $main-color;
+
+    > .hero-section__container {
+        grid-column: content;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+
+        @media(max-width: 640px) {
+            flex-direction: column;
+        }
+
+        .hero-section__text {
+            max-width: 50%;
+            min-width: 300px;
+
+            @media(max-width: 996px) {
+                font-size: 14px;
+            }
+
+            @media(max-width: 640px) {
+                font-size: 12px;
+                text-align: center;
+            }  
+
+            h1 {
+                color: $white;
+                font-size: 3em;
+                text-transform: uppercase;
+                margin-bottom: 8px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .hero-section__buttons {
+                margin-top: 32px;
+                display: flex;
+                gap: 16px;
+
+                @media(max-width: 640px) {
+                    justify-content: center;
+                }
+
+                a:first-child {
+                    @extend %button-main-style;
+                }
+
+                a:nth-child(2) {
+                    @extend %button-second-style;
+                }
+            }
+        }
+
+        // .hero-section__images {
+        //     position: relative;
+
+        //     img {
+        //         max-width: 100%;
+        //         height: auto;
+        //         object-fit: cover;
+        //         object-position: top center;
+
+        //         &:first-child {
+        //             display: none;
+        //             position: absolute;
+        //             top: 50%;
+        //             left: 0px;
+        //             transform: translate(-50%, -50%);
+        //             aspect-ratio: 1 / 1;
+        //         }
+        //     }
+        // }
+    }
+}
+
+// End Hero Section 
+
+// Start About Us Section 
+
+section.about-us-section {
+    @extend %grid-content;
+    padding: $section-ver-padding 0px;
+    background-color: $main-color;
+    position: relative;
+
+    &:hover::after {
+        width: 100%;
+    }
+
+    &::after {
+        @extend %section-end-line;
+    }
+
+    > .about-us-section__container {
+        grid-column: content;
+
+        .about-us-section__title-1 {
+            @extend %title-1;
+        }
+
+        .about-us-section__content {
+            margin-top: 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            grid-gap: 32px;
+
+            @media (max-width: 640px) {
+                grid-template-columns: 1fr;
+            }
+
+            img {
+                max-width: 100%;
+                aspect-ratio: 16 / 9;
+                object-fit: cover;
+                border-radius: 10px;
+                filter: brightness(60%);
+            }
+
+            .about-us-section__text {
+                max-width: 500px;
+
+                @media (max-width: 768px) {
+                    font-size: 14px;
+                }
+
+                @media (max-width: 640px) {
+                    text-align: center;
+                    font-size: 12px;
+                }
+
+                h3 {
+                    font-size: 1.2em;
+                }
+
+                p {
+                    font-size: 1em;
+                }
+                
+                a {
+                    @extend %button-second-style;
+                    margin-top: 16px;
+                }
+            }
+        }
+    }
+}
+
+// End About Us Section 
+
+// Start Gallery Section 
+
+section.gallery-section {
+    @extend %grid-content;
+    padding: $section-ver-padding 0px;
+    background-color: $main-color;
+    position: relative;
+
+    &:hover::after {
+        width: 100%;
+    }
+
+    &::after {
+        @extend %section-end-line;
+    }
+
+    > .gallery-section__container {
+        grid-column: content;
+
+        > .gallery-section__title {
+            @extend %title-2;
+        }
+
+        > .gallery-section__content {
+            margin-top: 32px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 16px;
+
+            img {
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+// End Gallery Section 
+
+// Start Why Us Section 
+
+section.why-us-section {
+    @extend %grid-content;
+    padding: $section-ver-padding 0px;
+    background-color: $main-color;
+    position: relative;
+
+    &:hover::after {
+        width: 100%;
+    }
+
+    &::after {
+        @extend %section-end-line;
+    }
+
+    > .why-us-section__container {
+        grid-column: content;
+
+        .why-us-section__title-1 {
+            @extend %title-1;
+        }
+
+        .why-us-section__content {
+            margin-top: 32px;
+            display: flex;
+            gap: 32px;
+
+            @media(max-width: 768px) {
+                flex-direction: column;
+                font-size: 14px;
+            }
+
+            @media(max-width: 640px) {
+                text-align: center;
+                font-size: 12px;
+            }
+
+            > div {
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+            }
+
+            h3 {
+                font-size: 1.2em;
+            }
+
+            p {
+                margin-top: 8px;
+                font-size: 1em;
+
+                @media(min-width: 768px) {
+                    margin-left: 24px;
+                }
+            }
+        }
+    }
+}
+
+// End Why Us Section 
