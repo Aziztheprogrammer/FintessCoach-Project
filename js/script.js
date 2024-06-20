@@ -1,6 +1,8 @@
 // Coach Info
 let coachInfo = {
     coachName: "Aziz Berhouma",
+    coachIg: "",
+    coachFb: "",
 }
 
 
