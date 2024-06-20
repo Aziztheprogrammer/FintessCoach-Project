@@ -22,7 +22,7 @@ section.contact-section, section.contact-banner-section, section.offers-section,
   }
 }
 
-section.contact-banner-section > .contact-banner-section__container a, section.hero-section > .hero-section__container .hero-section__text .hero-section__buttons a:first-child {
+section.contact-section > .contact-section__container .contact-section__content form > div input#form__submit, section.contact-banner-section > .contact-banner-section__container a, section.hero-section > .hero-section__container .hero-section__text .hero-section__buttons a:first-child {
   color: #a2a2a2;
   display: inline-block;
   font-size: 14px;
@@ -466,7 +466,7 @@ section.contact-section > .contact-section__container {
   grid-column: content;
 }
 section.contact-section > .contact-section__container .contact-section__content {
-  margin-top: 32px;
+  margin-top: 48px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
@@ -479,7 +479,6 @@ section.contact-section > .contact-section__container .contact-section__content 
 @media (max-width: 768px) {
   section.contact-section > .contact-section__container .contact-section__content .contact-section__info {
     font-size: 14px;
-    text-align: center;
   }
 }
 @media (max-width: 640px) {
@@ -501,7 +500,53 @@ section.contact-section > .contact-section__container .contact-section__content 
   gap: 16px;
 }
 @media (max-width: 768px) {
-  section.contact-section > .contact-section__container .contact-section__content .contact-section__info div {
-    justify-content: center;
+  section.contact-section > .contact-section__container .contact-section__content form {
+    font-size: 14px;
   }
+}
+@media (max-width: 640px) {
+  section.contact-section > .contact-section__container .contact-section__content form {
+    font-size: 12px;
+  }
+}
+section.contact-section > .contact-section__container .contact-section__content form h3 {
+  font-family: Montserrat, sans-serif;
+  text-transform: uppercase;
+  font-size: 1.4em;
+}
+section.contact-section > .contact-section__container .contact-section__content form > div {
+  margin-top: 16px;
+  border: 1px #a2a2a2 solid;
+  position: relative;
+}
+section.contact-section > .contact-section__container .contact-section__content form > div.form__submit {
+  border: none;
+}
+section.contact-section > .contact-section__container .contact-section__content form > div label {
+  color: #a2a2a2;
+  background-color: #191919;
+  padding: 4px 8px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.88em;
+  position: absolute;
+  top: 0px;
+  left: 1em;
+  transform: translateY(-50%);
+}
+section.contact-section > .contact-section__container .contact-section__content form > div input {
+  width: 100%;
+  padding: 8px;
+  color: #EFEFEF;
+  background-color: transparent;
+}
+section.contact-section > .contact-section__container .contact-section__content form > div input#form__submit {
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+section.contact-section > .contact-section__container .contact-section__content form > div input#form__message {
+  min-height: 200px;
+}
+section.contact-section > .contact-section__container .contact-section__content form > div input:focus {
+  outline: none;
 }/*# sourceMappingURL=styles.css.map */

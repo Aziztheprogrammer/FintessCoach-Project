@@ -510,7 +510,7 @@ section.contact-section {
         }
 
         .contact-section__content {
-            margin-top: 32px;
+            margin-top: 48px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 32px;
@@ -523,7 +523,6 @@ section.contact-section {
 
                 @media (max-width: 768px) {
                     font-size: 14px;
-                    text-align: center;
                 }
 
                 @media (max-width: 640px) {
@@ -543,9 +542,65 @@ section.contact-section {
                     display: flex;
                     align-items: center;
                     gap: 16px;
+                }
+            }
 
-                    @media (max-width: 768px) {
-                        justify-content: center;
+            form {
+
+                @media (max-width: 768px) {
+                    font-size: 14px;
+                }
+
+                @media (max-width: 640px) {
+                    font-size: 12px;
+                }
+
+                h3 {
+                    font-family: Montserrat, sans-serif;
+                    text-transform: uppercase;
+                    font-size: 1.4em;
+                }
+
+                > div {
+                    margin-top: 16px;
+                    border: 1px $third-color solid;
+                    position: relative;
+
+                    &.form__submit {
+                        border: none;
+                    }
+
+                    label {
+                        color: $third-color;
+                        background-color: $main-color;
+                        padding: 4px 8px;
+                        font-family: "Open Sans", sans-serif;
+                        font-size: 0.88em;
+                        position: absolute;
+                        top: 0px;
+                        left: 1em;
+                        transform: translateY(-50%);
+                    }
+
+                    input {
+                        width: 100%;
+                        padding: 8px;
+                        color: $white;
+                        background-color: transparent;
+
+                        &#form__submit {
+                            @extend %button-main-style;
+                            width: fit-content;
+                            cursor: pointer;
+                        }
+
+                        &#form__message {
+                            min-height: 200px;
+                        }
+
+                        &:focus {
+                            outline: none;
+                        }
                     }
                 }
             }
