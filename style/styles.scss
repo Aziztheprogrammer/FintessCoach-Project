@@ -11,6 +11,66 @@ p {
     color: $third-color;
 }
 
+// Start Loading Screen
+
+$width-bounce-ball: 15px;
+$height-bounce-ball: 15px;
+$bounce_height: 30px;
+
+.loading-screen {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: $main-color;
+  z-index: 3;
+}
+
+.loading-screen .text {
+  font-family: Montserrat, sans-serif;
+  color: $second-color;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.bounceball {
+  position: relative;
+  display: inline-block;
+  height: 37px;
+  width: $width-bounce-ball;
+  &:before {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 0;
+    width: $width-bounce-ball;
+    height: $height-bounce-ball;
+    border-radius: 50%;
+    background-color: $second-color;
+    transform-origin: 50%;
+    animation: bounce 500ms alternate infinite ease;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    top: $bounce_height;
+    height: 5px;
+    border-radius: 60px 60px 20px 20px;
+    transform: scaleX(2);
+  }
+  35% {
+    height: $height-bounce-ball;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+  100% {
+    top: 0;
+  }
+}
+// End Loading Screen
 
 // Start Header
 header {
@@ -438,7 +498,6 @@ section.offers-section {
 // End Offers Section
 
 // Start Reviews Section 
-
 section.reviews-section {
     @extend %grid-content;
     background-color: $main-color;
@@ -482,7 +541,7 @@ section.reviews-section {
                         transform: translateY(16px);
 
                         &:hover {
-                            transform: translateY(16px) scale(1.1);
+                            transform: translateY(16px) scale(1.05);
                         }
                     }
                 }
@@ -524,7 +583,6 @@ section.reviews-section {
         }
     }
 }
-
 // End Reviews Section 
 
 // Start Contact Section

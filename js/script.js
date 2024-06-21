@@ -5,8 +5,25 @@ let coachInfo = {
     coachFb: "",
 }
 
+// Loading Screen
+let loadingScreen = document.getElementsByClassName('loading-screen')[0];
+document.onreadystatechange = function () {
+    var state = document.readyState
+    if (state == 'interactive') {
+        loadingScreen.style.visibility = "visible";
+    } else if (state == 'complete') {
+        setTimeout(function(){
+            loadingScreen.style.visibility="hidden";
+           document.body.style.visibility="visible";
+        },2000);
+    }
+}
 
 // Coach Dynamic Name
+let loadingScreenName = document.querySelector(".loading-screen .text");
+loadingScreenName.textContent = coachInfo.coachName.toUpperCase();
+
+
 let headerLogo = document.getElementsByClassName("header__logo")[0];
 headerLogo.textContent = coachInfo.coachName;
 

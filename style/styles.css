@@ -103,6 +103,59 @@ p {
   color: #a2a2a2;
 }
 
+.loading-screen {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #191919;
+  z-index: 3;
+}
+
+.loading-screen .text {
+  font-family: Montserrat, sans-serif;
+  color: #00572d;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.bounceball {
+  position: relative;
+  display: inline-block;
+  height: 37px;
+  width: 15px;
+}
+.bounceball:before {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #00572d;
+  transform-origin: 50%;
+  animation: bounce 500ms alternate infinite ease;
+}
+
+@keyframes bounce {
+  0% {
+    top: 30px;
+    height: 5px;
+    border-radius: 60px 60px 20px 20px;
+    transform: scaleX(2);
+  }
+  35% {
+    height: 15px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+  100% {
+    top: 0;
+  }
+}
 header {
   width: 100%;
   background-color: #191919;
@@ -446,7 +499,7 @@ section.reviews-section > .reviews-section__container .reviews-section__content 
     transform: translateY(16px);
   }
   section.reviews-section > .reviews-section__container .reviews-section__content .review:nth-child(2):hover {
-    transform: translateY(16px) scale(1.1);
+    transform: translateY(16px) scale(1.05);
   }
 }
 section.reviews-section > .reviews-section__container .reviews-section__content .review p {
