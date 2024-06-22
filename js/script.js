@@ -83,6 +83,14 @@ document.onreadystatechange = function () {
     }
 }
 
+// Burger Menu 
+let burgerIcon = document.querySelector(".header__burger-menu");
+let headerLinks = document.querySelector(".header__links > ul");
+
+burgerIcon.addEventListener("click", () => {
+    headerLinks.classList.toggle("opened");
+})
+
 // Coach Dynamic Name
 let loadingScreenName = document.querySelector(".loading-screen .text");
 loadingScreenName.textContent = coachInfo.coachName.toUpperCase();
