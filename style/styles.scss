@@ -26,6 +26,7 @@ $bounce_height: 30px;
   height: 100%;
   background-color: $main-color;
   z-index: 3;
+  transition: $transition-duration ease-in-out visibility;
 }
 
 .loading-screen .text {
@@ -104,14 +105,28 @@ header {
 
                 li {
                     display: inline-block;
+                    padding: 16px 0px;
                     transition: $transition-duration ease-in-out opacity;
+                    position: relative;
     
                     &:not(:last-child) {
                         margin-right: 24px;
                     }
 
-                    &:not(:hover) {
-                        opacity: 0.8;
+                    &:after {
+                        content: "";
+                        background-color: $white;
+                        position: absolute;
+                        height: 1px;
+                        width: 0px;
+                        bottom: 0px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        transition: $transition-duration ease-in-out width;
+                    }
+
+                    &:hover:after {
+                        width: 100%;
                     }
                 }
             }
@@ -132,8 +147,9 @@ header {
 // Start Hero Section 
 section.hero-section {
     @extend %grid-content;
+    padding: $section-ver-padding 0px;
     width: 100%;
-    height: calc(100vh - 56px);
+    min-height: calc(100vh - 56px);
     background-color: $main-color;
 
     > .hero-section__container {
@@ -144,7 +160,7 @@ section.hero-section {
         gap: 32px;
 
         @media(max-width: 640px) {
-            flex-direction: column;
+            flex-direction: column-reverse;
         }
 
         .hero-section__text {
@@ -155,8 +171,13 @@ section.hero-section {
                 font-size: 14px;
             }
 
-            @media(max-width: 640px) {
+            @media(max-width: 768px) {
                 font-size: 12px;
+                text-align: center;
+            }  
+
+            @media(max-width: 640px) {
+                font-size: 10px;
                 text-align: center;
             }  
 
@@ -190,25 +211,46 @@ section.hero-section {
             }
         }
 
-        // .hero-section__images {
-        //     position: relative;
+        .hero-section__videos {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
 
-        //     img {
-        //         max-width: 100%;
-        //         height: auto;
-        //         object-fit: cover;
-        //         object-position: top center;
+            @media(max-width: 640px) {
+                flex-direction: row;
+            }
 
-        //         &:first-child {
-        //             display: none;
-        //             position: absolute;
-        //             top: 50%;
-        //             left: 0px;
-        //             transform: translate(-50%, -50%);
-        //             aspect-ratio: 1 / 1;
-        //         }
-        //     }
-        // }
+            .hero-section__video {
+                width: 150px;
+                height: 150px;
+                @media(max-width :640px) {
+                    margin: 0px -16px;
+                    width: 100px;
+                    height: 100px;
+                }
+
+                &:nth-child(2) {
+                    position: relative;
+                    z-index: 2;
+                    width: 200px;
+                    height: 200px;
+                    margin: -16px 0px;
+
+                    @media(max-width :640px) {
+                        margin: 0px -16px;
+                        width: 150px;
+                        height: 150px;
+                    }
+                }
+
+                > video {
+                    border-radius: 10px;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            
+        }
     }
 }
 // End Hero Section 

@@ -5,6 +5,70 @@ let coachInfo = {
     coachFb: "",
 }
 
+// Offers Object 
+let offers = [
+    {
+        title: "Nutrition Guidance",
+        desc: "Expert advice on healthy eating habits and meal planning to support fitness goals."
+    },
+    {
+        title: "Personalized Workout Plans",
+        desc: "Customized exercise routines tailored to individual fitness goals and abilities."
+    },
+    {
+        title: "Ongoing Support",
+        desc: "Regular check-ins, motivation, and accountability to help clients stay on track and achieve success."
+    }
+];
+
+// Gallery Images Object 
+let gallery = [
+    {
+        src: "https://cdn.pixabay.com/photo/2016/03/27/07/08/man-1282232_1280.jpg",
+        alt: "Gallery Image"
+    },
+    {
+        src: "https://cdn.pixabay.com/photo/2016/03/27/07/08/man-1282232_1280.jpg",
+        alt: "Gallery Image"
+    },
+    {
+        src: "https://cdn.pixabay.com/photo/2016/03/27/07/08/man-1282232_1280.jpg",
+        alt: "Gallery Image"
+    },
+    {
+        src: "https://cdn.pixabay.com/photo/2016/03/27/07/08/man-1282232_1280.jpg",
+        alt: "Gallery Image"
+    },
+    {
+        src: "https://cdn.pixabay.com/photo/2016/03/27/07/08/man-1282232_1280.jpg",
+        alt: "Gallery Image"
+    },
+    {
+        src: "https://cdn.pixabay.com/photo/2016/03/27/07/08/man-1282232_1280.jpg",
+        alt: "Gallery Image"
+    },
+];
+
+// Why-us Object 
+let whyUs = [
+    {
+        title: "#1 Experienced Coach",
+        desc: "With 8 years of coaching experience, I specialize in empowering individuals to achieve their personal goals with empathy and strategies."
+    },
+    {
+        title: "#2 Personalized Workout Plans",
+        desc: "Offering personalized workout plans, I tailor each program to fit your goals, ensuring effective and sustainable fitness results."
+    },
+    {
+        title: "#3 Nutrition Guidance",
+        desc: "Providing personalized nutrition guidance, I craft plans tailored to your needs, fostering healthy habits and optimal wellness."
+    },
+    {
+        title: "#4 Ongoing Support",
+        desc: "Committed to your success, I offer continuous support, ensuring you stay motivated and achieve your goals every step of the way."
+    }
+];
+
 // Loading Screen
 let loadingScreen = document.getElementsByClassName('loading-screen')[0];
 document.onreadystatechange = function () {
@@ -30,22 +94,26 @@ headerLogo.textContent = coachInfo.coachName;
 let heroParagraph = document.querySelector(".hero-section__text p");
 heroParagraph.textContent = coachInfo.coachName + " Provides An Elite Fitness Coaching for Personalized Training and Support to Transform Your Body and Unlock Your Full Potential in Health and Fitness.";
 
-// Offers Object 
-let offers = [
-    {
-        title: "Nutrition Guidance",
-        desc: "Expert advice on healthy eating habits and meal planning to support fitness goals."
-    },
-    {
-        title: "Personalized Workout Plans",
-        desc: "Customized exercise routines tailored to individual fitness goals and abilities."
-    },
-    {
-        title: "Ongoing Support",
-        desc: "Regular check-ins, motivation, and accountability to help clients stay on track and achieve success."
-    }
-];
+// Dynamic Gallery Section
+let galleryContent = document.getElementsByClassName("gallery-section__content")[0];
+for (let i = 0; i < gallery.length; i++) {
+    let img = document.createElement("img");
+    img.src = gallery[i].src;
+    img.alt = gallery[i].alt;
+    galleryContent.append(img);
+}
 
+// Dynamic Why Us Section
+let services = document.getElementsByClassName("why-us-section__service");
+[...services].forEach((service, i) => {
+    let serviceTitle = document.createElement("h3");
+    serviceTitle.textContent = whyUs[i].title;
+    let serviceDesc = document.createElement("p");
+    serviceDesc.textContent = whyUs[i].desc;
+    service.append(serviceTitle, serviceDesc);
+});
+
+// Dynamic Offers Section 
 let offersTitles = document.querySelectorAll(".offers-section__offer > h2");
 let offersDesc = document.querySelectorAll(".offers-section__offer > p");
 

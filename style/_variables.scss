@@ -22,7 +22,7 @@ $section-ver-padding: 60px;
 %grid-content {
     margin: auto;
     display: grid;
-    grid-template-columns: 128px [content-start] 1fr [content-end] 128px;
+    grid-template-columns: 160px [content-start] 1fr [content-end] 160px;
 
     @media(max-width: 996px) {
         grid-template-columns: 64px [content-start] 1fr [content-end] 64px;;
