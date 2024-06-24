@@ -1,6 +1,8 @@
 // Coach Info
 let coachInfo = {
     coachName: "Aziz Berhouma",
+    coachImg: "https://cdn.pixabay.com/photo/2016/02/16/19/18/man-1203885_960_720.jpg",
+    coachAbout: "Elite Fitness Coaching for Personalized Training and Support to Transform Your Body and Unlock Your Full Potential in Health and Fitness.",
     coachIg: "https://www.instagram.com/aziz.thecoder/",
     coachFb: "https://www.facebook.com",
     coachLocation: "Tunisia, Tunis",
@@ -31,23 +33,23 @@ let gallery = [
         alt: "Gallery Image"
     },
     {
-        src: "https://cdn.pixabay.com/photo/2016/03/27/07/08/man-1282232_1280.jpg",
+        src: "https://cdn.pixabay.com/photo/2017/04/25/20/18/woman-2260736_960_720.jpg",
         alt: "Gallery Image"
     },
     {
-        src: "https://cdn.pixabay.com/photo/2016/03/27/07/08/man-1282232_1280.jpg",
+        src: "https://cdn.pixabay.com/photo/2017/04/27/08/29/man-2264825_960_720.jpg",
         alt: "Gallery Image"
     },
     {
-        src: "https://cdn.pixabay.com/photo/2016/03/27/07/08/man-1282232_1280.jpg",
+        src: "https://cdn.pixabay.com/photo/2017/08/07/14/02/man-2604149_960_720.jpg",
         alt: "Gallery Image"
     },
     {
-        src: "https://cdn.pixabay.com/photo/2016/03/27/07/08/man-1282232_1280.jpg",
+        src: "https://cdn.pixabay.com/photo/2023/09/11/14/19/weight-8246973_1280.jpg",
         alt: "Gallery Image"
     },
     {
-        src: "https://cdn.pixabay.com/photo/2016/03/27/07/08/man-1282232_1280.jpg",
+        src: "https://cdn.pixabay.com/photo/2016/11/29/13/10/man-1869744_960_720.jpg",
         alt: "Gallery Image"
     },
 ];
@@ -123,6 +125,16 @@ headerLogo.textContent = coachInfo.coachName;
 let heroParagraph = document.querySelector(".hero-section__text p");
 heroParagraph.textContent = coachInfo.coachName + " Provides An Elite Fitness Coaching for Personalized Training and Support to Transform Your Body and Unlock Your Full Potential in Health and Fitness.";
 
+// Dynamic About Us Section
+let aboutUsTitle = document.querySelector(".about-us-section__content > h3");
+let aboutUsPar = document.querySelector(".about-us-section__content > p");
+let aboutUsImage = document.querySelector(".about-us-section > img");
+
+aboutUsTitle.textContent = `Coach ${coachInfo.coachName}`;
+aboutUsPar.textContent = coachInfo.coachAbout;
+aboutUsImage.src = coachInfo.coachImg;
+aboutUsImage.alt = `${coachInfo.coachName} Image`;
+
 // Dynamic Gallery Section
 let galleryContent = document.getElementsByClassName("gallery-section__content")[0];
 for (let i = 0; i < gallery.length; i++) {
@@ -194,6 +206,13 @@ let email = document.querySelector("div.email > span");
 coachLocation.textContent = coachInfo.coachLocation;
 phone.textContent = coachInfo.coachPhone;
 email.textContent = coachInfo.coachEmail;
+
+// Dynamic Footer Section 
+let coachNameFooter = document.querySelector(".footer__about-coach > h2");
+coachNameFooter.textContent = coachInfo.coachName;
+
+let coachAboutFooter = document.querySelector(".footer__about-coach > p");
+coachAboutFooter.textContent = coachInfo.coachAbout;
 
 // Instagram links 
 let igLinks = document.getElementsByClassName("instagram-link");

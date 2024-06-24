@@ -288,8 +288,10 @@ section.hero-section {
 
 // Start About Us Section 
 section.about-us-section {
-    @extend %grid-content;
+    display: grid;
     padding: $section-ver-padding 0px;
+    grid-template-columns: 40% 60%;
+    align-items: center;
     background-color: $main-color;
     position: relative;
 
@@ -299,59 +301,53 @@ section.about-us-section {
 
     &::after {
         @extend %section-end-line;
+
+        @media (min-width: 640px) {
+            display: none;
+        }
     }
 
-    > .about-us-section__container {
-        grid-column: content;
+    @media (max-width: 640px) {
+        grid-template-columns: 1fr;
+    }
 
-        .about-us-section__title-1 {
-            @extend %title-1;
+    > img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+        max-height: 350px;
+
+        @media (max-width: 640px) {
+            max-height: 250px;
+        }
+    }
+
+    .about-us-section__content {
+        padding: 32px;
+
+        @media (max-width: 758px) {
+            font-size: 14px;
         }
 
-        .about-us-section__content {
-            margin-top: 32px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            grid-gap: 32px;
+        @media (max-width: 640px) {
+            padding: 32px 32px 0px 32px;
+            text-align: center;
+            font-size: 12px;
+        }
 
-            @media (max-width: 640px) {
-                grid-template-columns: 1fr;
-            }
+        h3 {
+            font-size: 1.4em;
+        }
 
-            img {
-                max-width: 100%;
-                aspect-ratio: 16 / 9;
-                object-fit: cover;
-                border-radius: 10px;
-                filter: brightness(60%);
-            }
+        p {
+            font-size: 1em;
+            margin: 8px 0px;
+        }
 
-            .about-us-section__text {
-                max-width: 500px;
-
-                @media (max-width: 768px) {
-                    font-size: 14px;
-                }
-
-                @media (max-width: 640px) {
-                    text-align: center;
-                    font-size: 12px;
-                }
-
-                h3 {
-                    font-size: 1.2em;
-                }
-
-                p {
-                    font-size: 1em;
-                }
-                
-                a {
-                    @extend %button-second-style;
-                    margin-top: 16px;
-                }
-            }
+        a {
+            @extend %button-second-style;
+            margin-top: 16px
         }
     }
 }
@@ -389,6 +385,9 @@ section.gallery-section {
                 border-radius: 10px;
                 opacity: 0.8;
                 transition: $transition-duration ease-in-out opacity;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
 
                 &:hover {
                     opacity: 1;
