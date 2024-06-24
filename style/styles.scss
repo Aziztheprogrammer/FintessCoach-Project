@@ -180,7 +180,7 @@ section.hero-section {
     @extend %grid-content;
     padding: $section-ver-padding 0px;
     width: 100%;
-    min-height: calc(100vh - 56px);
+    // min-height: calc(100vh - 56px);
     background-color: $main-color;
 
     > .hero-section__container {
@@ -192,6 +192,7 @@ section.hero-section {
 
         @media(max-width: 640px) {
             flex-direction: column-reverse;
+            justify-content: flex-end;
         }
 
         .hero-section__text {

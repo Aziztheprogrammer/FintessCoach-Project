@@ -34,7 +34,7 @@ section.contact-section > .contact-section__container .contact-section__content 
 section.offers-section > .offers-section__container .offers-section__content .offers-section__offer a, section.about-us-section > .about-us-section__container .about-us-section__content .about-us-section__text a, section.hero-section > .hero-section__container .hero-section__text .hero-section__buttons a:nth-child(2) {
   color: #a2a2a2;
   display: inline-block;
-  font-size: 0.88em;
+  font-size: 14px;
   text-transform: uppercase;
   border: 2px solid #00572d;
   padding: 8px 16px;
@@ -247,7 +247,6 @@ header > .header__container .header__burger-menu {
 section.hero-section {
   padding: 60px 0px;
   width: 100%;
-  min-height: calc(100vh - 56px);
   background-color: #191919;
 }
 section.hero-section > .hero-section__container {
@@ -260,6 +259,7 @@ section.hero-section > .hero-section__container {
 @media (max-width: 640px) {
   section.hero-section > .hero-section__container {
     flex-direction: column-reverse;
+    justify-content: flex-end;
   }
 }
 section.hero-section > .hero-section__container .hero-section__text {
