@@ -1,8 +1,11 @@
 // Coach Info
 let coachInfo = {
     coachName: "Aziz Berhouma",
-    coachIg: "",
-    coachFb: "",
+    coachIg: "https://www.instagram.com/aziz.thecoder/",
+    coachFb: "https://www.facebook.com",
+    coachLocation: "Tunisia, Tunis",
+    coachPhone: "+216 12 345 678",
+    coachEmail: "mail@gmail.com"
 }
 
 // Offers Object 
@@ -69,6 +72,24 @@ let whyUs = [
     }
 ];
 
+let reviews = [
+    {
+        review: "Working with You has been life-changing! Their personalized coaching helped me achieve my fitness goals faster than I ever thought possible.",
+        clientName: "Client Name",
+        clientImg: "https://cdn.pixabay.com/photo/2016/03/27/07/08/man-1282232_1280.jpg"
+    },
+    {
+        review: "Working with You has been life-changing! Their personalized coaching helped me achieve my fitness goals faster than I ever thought possible.",
+        clientName: "Client Name",
+        clientImg: "https://cdn.pixabay.com/photo/2016/03/27/07/08/man-1282232_1280.jpg"
+    },
+    {
+        review: "Working with You has been life-changing! Their personalized coaching helped me achieve my fitness goals faster than I ever thought possible.",
+        clientName: "Client Name",
+        clientImg: "https://cdn.pixabay.com/photo/2016/03/27/07/08/man-1282232_1280.jpg"
+    }
+];
+
 // Loading Screen
 let loadingScreen = document.getElementsByClassName('loading-screen')[0];
 document.onreadystatechange = function () {
@@ -132,3 +153,58 @@ offersTitles.forEach((title, i) => {
 offersDesc.forEach((desc, i) => {
     desc.textContent = offers[i].desc;
 });
+
+// Dynamic Reviews Section
+let reviewsContainer = document.getElementsByClassName("reviews-section__content")[0];
+reviews.forEach((review) => {
+    // Create Review Div
+    let reviewDiv = document.createElement("div");
+    reviewDiv.classList.add("review");
+    // Create Review Paragraph
+    let reviewPar = document.createElement("p");
+    reviewPar.textContent = review.review;
+    reviewDiv.append(reviewPar);
+    // Create Client Info Div
+    let clientInfoDiv = document.createElement("div");
+    clientInfoDiv.classList.add("client-info");
+    // Add Client Image
+    let clientImage = document.createElement("img");
+    clientImage.src = review.clientImg;
+    clientImage.alt = `${review.clientName} Image`;
+    clientInfoDiv.append(clientImage);
+    // Create Text Div
+    let infoText = document.createElement("div");
+    infoText.classList.add("text");
+    // Client Name & Type
+    let clientNameSpan = document.createElement("span");
+    let clientSmall = document.createElement("small");
+    clientNameSpan.textContent = review.clientName;
+    clientSmall.textContent = "Client";
+    infoText.append(clientNameSpan, clientSmall);
+    clientInfoDiv.append(infoText);
+    reviewDiv.append(clientInfoDiv);
+    reviewsContainer.append(reviewDiv);
+});
+
+// Dynamic Contact Section
+let coachLocation = document.querySelector("div.location > span");
+let phone = document.querySelector("div.phone > span");
+let email = document.querySelector("div.email > span");
+
+coachLocation.textContent = coachInfo.coachLocation;
+phone.textContent = coachInfo.coachPhone;
+email.textContent = coachInfo.coachEmail;
+
+// Instagram links 
+let igLinks = document.getElementsByClassName("instagram-link");
+[...igLinks].forEach((link) => {
+    link.href = coachInfo.coachIg;
+    link.target = "_blank";
+})
+
+// Facebook links 
+let fbLinks = document.getElementsByClassName("facebook-link");
+[...fbLinks].forEach((link) => {
+    link.href = coachInfo.coachFb;
+    link.target = "_blank";
+})

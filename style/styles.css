@@ -93,6 +93,10 @@ section.contact-section::after, section.reviews-section::after, section.offers-s
   transition: 0.4s ease-in-out width;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1, h2, h3 {
   font-family: Montserrat, sans-serif;
   color: #EFEFEF;
@@ -270,7 +274,6 @@ section.hero-section > .hero-section__container .hero-section__text {
 @media (max-width: 768px) {
   section.hero-section > .hero-section__container .hero-section__text {
     font-size: 12px;
-    text-align: center;
   }
 }
 @media (max-width: 640px) {
