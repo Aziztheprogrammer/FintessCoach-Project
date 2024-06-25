@@ -106,12 +106,19 @@ document.onreadystatechange = function () {
     }
 }
 
+// Page Title
+document.title = `${coachInfo.coachName} - Personal Fitness Coach`;
+
 // Burger Menu 
 let burgerIcon = document.querySelector(".header__burger-menu");
 let headerLinks = document.querySelector(".header__links > ul");
 
-burgerIcon.addEventListener("click", () => {
-    headerLinks.classList.toggle("opened");
+burgerIcon.addEventListener("mouseover", () => {
+    headerLinks.classList.add("opened");
+})
+
+burgerIcon.addEventListener("mouseout", () => {
+    headerLinks.classList.remove("opened");
 })
 
 // Coach Dynamic Name
