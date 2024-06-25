@@ -339,6 +339,7 @@ section.hero-section > .hero-section__container .hero-section__videos .hero-sect
 section.hero-section > .hero-section__container .hero-section__videos .hero-section__video > video {
   border-radius: 10px;
   height: 100%;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
