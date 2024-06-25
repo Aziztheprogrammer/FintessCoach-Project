@@ -1,11 +1,11 @@
 // Coach Info
 let coachInfo = {
-    coachName: "Aziz Berhouma",
-    coachImg: "https://cdn.pixabay.com/photo/2016/02/16/19/18/man-1203885_960_720.jpg",
-    coachAbout: "Elite Fitness Coaching for Personalized Training and Support to Transform Your Body and Unlock Your Full Potential in Health and Fitness.",
-    coachIg: "https://www.instagram.com/aziz.thecoder/",
-    coachFb: "https://www.facebook.com",
-    coachLocation: "Tunisia, Tunis",
+    coachName: "Nour Jmil",
+    coachImg: "assets/images/coach-img.jpg",
+    coachAbout: "Nour Jmil stands out as a dynamic fitness coach, blending his expertise in physical training and nutrition to empower clients on their health journeys.",
+    coachIg: "https://www.instagram.com/nourjmil_coach/",
+    coachFb: "#",
+    coachLocation: "Tunisia, Sfax",
     coachPhone: "+216 12 345 678",
     coachEmail: "mail@gmail.com"
 }
@@ -29,27 +29,27 @@ let offers = [
 // Gallery Images Object 
 let gallery = [
     {
-        src: "https://cdn.pixabay.com/photo/2016/03/27/07/08/man-1282232_1280.jpg",
+        src: "assets/images/gallery-1.webp",
         alt: "Gallery Image"
     },
     {
-        src: "https://cdn.pixabay.com/photo/2017/04/25/20/18/woman-2260736_960_720.jpg",
+        src: "assets/images/gallery-2.webp",
         alt: "Gallery Image"
     },
     {
-        src: "https://cdn.pixabay.com/photo/2017/04/27/08/29/man-2264825_960_720.jpg",
+        src: "assets/images/gallery-3.webp",
         alt: "Gallery Image"
     },
     {
-        src: "https://cdn.pixabay.com/photo/2017/08/07/14/02/man-2604149_960_720.jpg",
+        src: "assets/images/gallery-4.webp",
         alt: "Gallery Image"
     },
     {
-        src: "https://cdn.pixabay.com/photo/2023/09/11/14/19/weight-8246973_1280.jpg",
+        src: "assets/images/coach-img.jpg",
         alt: "Gallery Image"
     },
     {
-        src: "https://cdn.pixabay.com/photo/2016/11/29/13/10/man-1869744_960_720.jpg",
+        src: "assets/images/gallery-5.webp",
         alt: "Gallery Image"
     },
 ];
@@ -113,13 +113,10 @@ document.title = `${coachInfo.coachName} - Personal Fitness Coach`;
 let burgerIcon = document.querySelector(".header__burger-menu");
 let headerLinks = document.querySelector(".header__links > ul");
 
-burgerIcon.addEventListener("mouseover", () => {
-    headerLinks.classList.add("opened");
+burgerIcon.addEventListener("click", () => {
+    headerLinks.classList.toggle("opened");
 })
 
-burgerIcon.addEventListener("mouseout", () => {
-    headerLinks.classList.remove("opened");
-})
 
 // Coach Dynamic Name
 let loadingScreenName = document.querySelector(".loading-screen .text");
