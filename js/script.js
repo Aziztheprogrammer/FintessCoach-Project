@@ -1,12 +1,12 @@
 // Coach Info
 let coachInfo = {
-    coachName: "Wassim Ben Aziza",
+    coachName: "Kais Trabelsi",
     coachImg: "assets/images/coach-img.webp",
     coachAbout: "Elite Fitness Coaching for Personalized Training and Support to Transform Your Body and Unlock Your Full Potential in Health and Fitness.",
-    coachIg: "https://www.instagram.com/wassimbenaziza/",
+    coachIg: "https://www.instagram.com/kais.trabelsy/",
     coachFb: "https://www.facebook.com",
     coachLocation: "Tunisia, Tunis",
-    coachPhone: "+216 12 345 678",
+    coachPhone: "+216 20 601 701",
     coachEmail: "mail@gmail.com"
 }
 
