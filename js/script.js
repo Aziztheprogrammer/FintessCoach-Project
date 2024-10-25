@@ -1,12 +1,12 @@
 // Coach Info
 let coachInfo = {
-    coachName: "Aziz Berhouma",
-    coachImg: "https://cdn.pixabay.com/photo/2016/02/16/19/18/man-1203885_960_720.jpg",
+    coachName: "Med Aziz Hazgui",
+    coachImg: "./assets/images/coach.jpg",
     coachAbout: "Elite Fitness Coaching for Personalized Training and Support to Transform Your Body and Unlock Your Full Potential in Health and Fitness.",
-    coachIg: "https://www.instagram.com/aziz.thecoder/",
-    coachFb: "https://www.facebook.com",
+    coachIg: "https://www.instagram.com/personal_trainer_aziz/",
+    coachFb: "https://www.facebook.com/zizo.aziz.3760430/",
     coachLocation: "Tunisia, Tunis",
-    coachPhone: "+216 12 345 678",
+    coachPhone: "+216 22 384 835",
     coachEmail: "mail@gmail.com"
 }
 
@@ -29,27 +29,27 @@ let offers = [
 // Gallery Images Object 
 let gallery = [
     {
-        src: "https://cdn.pixabay.com/photo/2016/03/27/07/08/man-1282232_1280.jpg",
+        src: "./assets/images/gallery-1.jpg",
         alt: "Gallery Image"
     },
     {
-        src: "https://cdn.pixabay.com/photo/2017/04/25/20/18/woman-2260736_960_720.jpg",
+        src: "./assets/images/gallery-2.jpg",
         alt: "Gallery Image"
     },
     {
-        src: "https://cdn.pixabay.com/photo/2017/04/27/08/29/man-2264825_960_720.jpg",
+        src: "./assets/images/gallery-3.jpg",
         alt: "Gallery Image"
     },
     {
-        src: "https://cdn.pixabay.com/photo/2017/08/07/14/02/man-2604149_960_720.jpg",
+        src: "./assets/images/gallery-4.jpg",
         alt: "Gallery Image"
     },
     {
-        src: "https://cdn.pixabay.com/photo/2023/09/11/14/19/weight-8246973_1280.jpg",
+        src: "./assets/images/gallery-5.jpg",
         alt: "Gallery Image"
     },
     {
-        src: "https://cdn.pixabay.com/photo/2016/11/29/13/10/man-1869744_960_720.jpg",
+        src: "./assets/images/gallery-6.jpg",
         alt: "Gallery Image"
     },
 ];

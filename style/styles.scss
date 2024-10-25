@@ -386,8 +386,8 @@ section.gallery-section {
                 border-radius: 10px;
                 opacity: 0.8;
                 transition: $transition-duration ease-in-out opacity;
-                max-height: 200px;
                 width: 100%;
+                height: 100%;
                 object-fit: cover;
                 object-position: top;
 
